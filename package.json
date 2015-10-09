@@ -1,7 +1,7 @@
 {
   "name": "sass-blocks",
   "title": "SassBlocks",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "SassBlocks introduces a pattern to make working with blocks/modules a little more oop",
   "keywords": [
     "sass",
