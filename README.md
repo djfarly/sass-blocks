@@ -29,20 +29,20 @@ SassBlocks is intended to be used like this:
 // Think of this as a constructor.
 
 $this: (
-    // Modulename
-    module:                 module,
+    // Block name
+    block:                  my-block,
 
-    // Module Variables
+    // Block variables
     height:                 100px,
     subheight:              $global-height-value,
     somecolor:              $color-brand,
 );
 
-// Define your module.
+// Define your block.
 // This does not need to follow bem-principles, but it certainly can't hurt. ;)
 // Do not use any global variables in here!
 
-.#{this(module)} {
+.#{this(my-block)} {
     height: this(height);
 
     &__element {
@@ -54,7 +54,7 @@ $this: (
     }
 }
 
-// Remember to unset $this. This way we fake scoping to that file.
+// Remember to unset $this. This way we fake scoping it to that file.
 $this: null;
 ```
 
