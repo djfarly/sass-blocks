@@ -1,0 +1,31 @@
+{
+  "name": "sass-blocks",
+  "title": "SassBlocks",
+  "version": "0.0.1",
+  "description": "SassBlocks introduces a pattern to make working with blocks/modules a little more oop",
+  "keywords": [
+    "sass",
+    "scss",
+    "module",
+    "bem"
+  ],
+  "homepage": "https://github.com/djfarly/sass-blocks",
+  "bugs": "https://github.com/djfarly/sass-blocks/issues",
+  "author": {
+    "name": "Jan Willem Henckel",
+    "email": "jan@mpfilm.de",
+    "url": "https://github.com/djfarly"
+  },
+  "main": "_sass-blocks.scss",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/djfarly/sass-blocks.git"
+  },
+  "bin": {},
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/djfarly/sass-blocks/blob/master/LICENSE"
+    }
+  ]
+}

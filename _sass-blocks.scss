@@ -1,0 +1,57 @@
+/*
+ * SassBlocks v0.0.1
+ * https://github.com/djfarly/sass-blocks
+ * Jan Willem Henckel <jan@mpfilm.de>
+ * 
+ * SassBlocks is intended to be used like this:
+
+    // Each block should live in it's seperate file.
+    // To begin declare all internal variables for this block.
+    // Reference any external variables that will be used in here.
+    // Think of this as a constructor.
+
+    $this: (
+        // Modulename
+        module:                 module,
+
+        // Module Variables
+        height:                 100px,
+        subheight:              $global-height-value,
+        somecolor:              $color-brand,
+    );
+
+    // Define your module.
+    // This does not need to follow bem-principles, but it certainly can't hurt. ;)
+    // Do not use any global variables in here!
+
+    .#{this(module)} {
+        height: this(height);
+
+        &__element {
+            height: this(subheight);
+
+            &--modifier {
+                color: this(somecolor);
+            }
+        }
+    }
+
+    // Remember to unset $this. This way we fake scoping to that file.
+    $this: null;
+
+ * Remember that using SassBlocks reserves the $this variable.
+ * 
+ **/
+
+
+// default value for $this
+$this: () !default;
+
+// Returns the value in the $this map at the provided key
+// @param {String} $key A key inside the global $this-variable.
+// @example
+//      $this: (height: 30px); 
+//      this(height) // 30px;
+@function this($key) {
+ 	@return map-get($this, $key);
+}
