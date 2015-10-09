@@ -16,15 +16,13 @@ npm install sass-blocks --save-dev
 
 # Usage
 Import the _sass-blocks.scss file.
-```
-scss
-@import "path/to/dist/math";
+```scss
+@import "path/to/sass-blocks";
 ```
 
 SassBlocks is intended to be used like this:
 
-```
-scss
+```scss
 // Each block should live in it's seperate file.
 // To begin declare all internal variables for this block.
 // Reference any external variables that will be used in here.
@@ -60,4 +58,4 @@ $this: (
 $this: null;
 ```
 
-Remember that using SassBlocks reserves the $this variable.
+Remember that using SassBlocks reserves the `$this` variable.
