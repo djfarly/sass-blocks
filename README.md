@@ -15,18 +15,20 @@ npm install sass-blocks --save-dev
 ```
 
 # Usage
-Import the _sass-blocks.scss file.
+Make sure to import the _sass-blocks.scss file.
 ```scss
 @import "path/to/sass-blocks";
 ```
 
-SassBlocks is intended to be used like this:
+SassBlocks proposes a pattern where you first declare all variables that should be local to the current block into the sass map `$this`.
+Inside the block only those variables are used. Block variables are only ever accessed via the `this()` function.
+After the blocks execution `$this` is reset.
 
 ```scss
 // Each block should live in it's seperate file.
 // To begin declare all internal variables for this block.
 // Reference any external variables that will be used in here.
-// Think of this as a constructor.
+// Think of this as a 'constructor'.
 
 $this: (
     // Block name
@@ -59,3 +61,11 @@ $this: null;
 ```
 
 Remember that using SassBlocks reserves the `$this` variable.
+
+The actual function itself isn't that big of deal. `this()` just makes accessing the `$this` map a bit less verbose.
+```scss
+// 'old'
+$foo = map-get($this, bar);
+// the SassBlocks way
+$foo = this(bar);
+```
