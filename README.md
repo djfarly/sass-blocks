@@ -1,5 +1,5 @@
 # SassBlocks 
-SassBlocks introduces a pattern to make working with bem-blocks/modules a little more oop.
+SassBlocks introduces a pattern to make working with bem-blocks/modules in Sass/Scss a little more oop.
 
 # Install
 Install SassBlocks via Bower or npm.
@@ -35,14 +35,14 @@ $this: (
     // Block variables
     height:                 100px,
     subheight:              $global-height-value,
-    somecolor:              $color-brand,
+    somecolor:              $global-color-brand,
 );
 
 // Define your block.
 // This does not need to follow bem-principles, but it certainly can't hurt. ;)
 // Do not use any global variables in here!
 
-.#{this(my-block)} {
+.#{this(block)} {
     height: this(height);
 
     &__element {
