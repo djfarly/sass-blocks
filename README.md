@@ -25,6 +25,11 @@ Inside the block only those variables are used. Block variables are only ever ac
 After the blocks execution `$this` is reset.
 
 ```scss
+// Somewhere else before the block is loaded
+$global-height-value: 130px;
+$global-color-brand: hotpink;
+
+// _myblock.scss
 // Each block should live in it's seperate file.
 // To begin declare all internal variables for this block.
 // Reference any external variables that will be used in here.
@@ -32,7 +37,7 @@ After the blocks execution `$this` is reset.
 
 $this: (
     // Block name
-    block:                  my-block,
+    block:                  myblock,
 
     // Block variables
     height:                 100px,
@@ -58,6 +63,11 @@ $this: (
 
 // Remember to unset $this. This way we fake scoping it to that file.
 $this: null;
+
+// all of this should result in
+// .myblock { height: 100px; }
+// .myblock__element { height: 130px; }
+// .myblock__element--modifier { color: hotpink; }
 ```
 
 Remember that using SassBlocks reserves the `$this` variable.
